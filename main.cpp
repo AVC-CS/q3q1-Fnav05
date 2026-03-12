@@ -11,18 +11,25 @@ int main()
     cin >> a >> b >> c;
 
     // TODO
-    double disc = sqrt(b*b - 4*a*c);
+    double d = b*b - 4*a*c;
 
-    double x1 = (-b + disc) / (2*a); // first root
-    double x2 = (-b - disc) / (2*a) ;// second root
+    double root1 = (-b + sqrt(d)) / (2*a); // first root
+    double root2 = (-b - sqrt(d)) / (2*a); // second root
+
+    double big, small;
 
     // TODO
-    if (x2 > x1) {
-        swap(x1, x2);
+    if (root2 > root1) {
+        big = root1;
+        small = root2;
+    }
+    else {
+        big = root2;
+        small = root1;
     }
 
     cout << setprecision(2) << fixed;
-    cout << x1 << " " << x2;
+    cout << big << " " << small << endl;
     // TODO
 
     return 0;
